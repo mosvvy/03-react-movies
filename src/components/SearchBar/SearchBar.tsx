@@ -1,4 +1,4 @@
-import showToastError from "../services/toastService";
+import showToastError from "../../services/toastService";
 import styles from "./SearchBar.module.css";
 
 interface SearchBarProps {
