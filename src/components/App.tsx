@@ -13,7 +13,16 @@ import showToastError from "../services/toastService";
 
 function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
+  // іншого виходу з movie для модалки я так й не знайшла
+  const [selectedMovie, setSelectedMovie] = useState<Movie>({
+    id: 0,
+    poster_path: "",
+    backdrop_path: "",
+    title: "",
+    overview: "",
+    release_date: "",
+    vote_average: 0,
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
