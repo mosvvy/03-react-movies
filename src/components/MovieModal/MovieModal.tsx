@@ -3,12 +3,12 @@ import type { Movie } from "../../types/movie";
 import css from "./MovieModal.module.css";
 import { useEffect } from "react";
 
-interface MovieModalParams {
+interface MovieModalProps {
   movie: Movie;
   onClose: () => void;
 }
 
-export default function MovieModal({ movie, onClose }: MovieModalParams) {
+export default function MovieModal({ movie, onClose }: MovieModalProps) {
   const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget) {
       onClose();
@@ -47,7 +47,7 @@ export default function MovieModal({ movie, onClose }: MovieModalParams) {
           &times;
         </button>
         <img
-          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
           alt={movie.title}
           className={css.image}
         />
